@@ -1,0 +1,27 @@
+name: agrofast
+description: "A new Flutter project."
+publish_to: 'none'  # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.5.4 <4.0.0"  # Compatible with Flutter 3.5.x.
+
+dependencies:
+  flutter:
+    sdk: flutter  # Corrected indentation
+  camera: ^0.11.0+2  # Updated to the most recent version of the camera package.
+  permission_handler: ^11.3.1  # Permissions handling for the camera.
+  path_provider: ^2.0.14  # System file path provider.
+  cupertino_icons: ^1.0.8  # Cupertino icons for iOS.
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0  # Linting for better code quality.
+
+flutter:
+  uses-material-design: true  # Use Material Design for visual components.
+  assets:
+    - assets/images/logo.png
+    - assets/images/fondo.jpg

@@ -1,0 +1,40 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // El plugin de Gradle de Flutter debe ser añadido después de los plugins de Android y Kotlin.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.agrofast"
+    compileSdk = 34  // Usar una versión más reciente del SDK, por ejemplo, 34.
+
+    ndkVersion = "25.2.9519653"  // Asegúrate de usar la versión correcta de NDK según tus necesidades.
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+defaultConfig {
+    applicationId = "com.example.agrofast"  // Este ID debe ser único para tu app. Asegúrate de que no haya otro paquete con el mismo ID en la Play Store.
+    minSdk = 21  // Es la versión mínima de Android que tu aplicación soportará. Puedes aumentarla si necesitas características más nuevas del sistema.
+    targetSdk = 34  // Asegúrate de que esta versión sea compatible con la versión de tu Android SDK.
+    versionCode = 1  // Es un valor único para cada versión publicada en la Play Store. Debe incrementarse con cada nueva publicación.
+    versionName = "1.0.0"  // Es el nombre de la versión que los usuarios verán. Puedes cambiarlo cuando se actualice tu app.
+}
+
+    buildTypes {
+        release {
+            // Si estás listo para producción, configura la clave de firma aquí.
+            signingConfig signingConfigs.debug  // Usa tu configuración de firma (debug por ahora).
+        }
+    }
+}
+
+flutter {
+    source = "../.."  // Asegúrate de que esta ruta sea correcta, dependiendo de dónde esté ubicado tu proyecto Flutter.
+}
